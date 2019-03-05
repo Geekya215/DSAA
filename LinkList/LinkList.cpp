@@ -6,7 +6,22 @@ class Node {
         T data;
         Node* next;
         Node* prev;
+
+        Node(T value);
+        ~Node();
 };
+
+template<class T>
+Node<T>::Node(T value)
+    :data(value)
+    ,next(nullptr)
+    ,prev(nullptr)
+    { }
+
+template<class T>
+Node<T>::~Node() {
+    // noting to do
+}
 
 template<class T>
 class LinkList {
@@ -21,12 +36,13 @@ class LinkList {
         ~LinkList();
         void setFormat(int length);
         void add(T value);
-        void insert(int index,T value);
-        void replace(int index,T value);
+        void insert(int index, T value);
+        void replace(int index, T value);
         T getValue(int index);
         Node<T>* getNode(int index);
         void removeByIndex(int index);
-        void removeByValue(T value);
+        void removeByValue(T value); // default delete all value in linklist which equal parameter
+        void removeByValue(T value, bool flag); // from head or from tail
         void display();
         bool isEmpty();
         bool checkRange(int range, int offset);
@@ -71,24 +87,31 @@ bool LinkList<T>::isEmpty() {
 
 template<class T>
 void LinkList<T>::printError(int range) {
-    std::cout << "Index out of range(" << ~range << '~' << range << '0' << std::endl;
+    std::cout << "Index out of range(" << ~range << " ~ " << range << ")" << std::endl;
 }
 
 template<class T>
 bool LinkList<T>::checkRange(int range, int offset) {
-    if(offset > ~range && offset < range) {
+    // orignal version
+    /**
+     * this version has logic error
+     */
+    // if(offset > ~range && offset < range) {
+    //     return true;
+    // }
+    // return false;
+    if(offset >= ~range && offset <= range) 
         return true;
-    }
     return false;
 }
 
 template<class T>
-LinkList<T>::LinkList() {
-    head = nullptr;
-    tail = nullptr;
-    length = 0;
-    formatlength = 7; // dafault length 7 (minimal)
-}
+LinkList<T>::LinkList()
+    :head(nullptr) 
+    ,tail(nullptr)
+    ,length(0)
+    ,formatlength(7) // dafault length 7 (minimal)
+    { } 
 
 template<class T>
 LinkList<T>::~LinkList() {
@@ -99,22 +122,18 @@ LinkList<T>::~LinkList() {
         delete temp;
     }
 
-    length = NULL;
-    formatlength = NULL;
     std::cout << "Delete LinkList" << std::endl;
 }
 
 template<class T>
 void LinkList<T>::add(T value) {
-    Node<T>* node = new Node<T>;
-    node->data = value;
-    node->next = nullptr;
-    node->prev = nullptr;
+    Node<T>* node = new Node<T>(value);
 
     if(isEmpty()) {
         head = node;
         tail = node;
-    } else {
+    } 
+    else {
         tail->next = node;
         node->prev = tail;
         tail = tail->next;
@@ -125,76 +144,179 @@ void LinkList<T>::add(T value) {
 
 template<class T>
 void LinkList<T>::insert(int index,T value) {
-    if(checkRange(length+1, index)) {
-        Node<T>* temp = nullptr;
-        Node<T>* node = new Node<T>;
-        node->data = value;
-        node->next = nullptr;
-        node->prev = nullptr;
+    if(checkRange(length, index)) {
 
         if(isEmpty()) {
             add(value);
-            delete node;
             return ;
         }
 
+        Node<T>* temp = nullptr;
+        Node<T>* node = new Node<T>(value);
+
         if(index < 0) {
+            if(index == ~length) {
+                node->next = head;
+                head->prev = node;
+                head = node;
+                length++;
+                return ;
+            }
+
             temp = tail;
             index = ~index;
             while(index){
                 temp = temp->prev;
                 index--;
             }
+
+            if(temp != tail) {
+                node->next = temp->next;
+                temp->next = node;
+                node->next->prev = node;
+                node->prev = temp;
+            }
+            else {
+                add(value);
+                return ;
+            }
             
         } else {
+            if(index == length) {
+                tail->next = node;
+                node->prev = tail;
+                tail = node;
+                length++;
+                return ;
+            }
+
             temp = head;
             while(index) {
                 temp = temp->next;
                 index--;
             }
+
+            if(temp != head) {
+                node->next = temp;
+                temp->prev->next = node;
+                node->prev = temp->prev;
+                temp->prev = node;
+            } 
+            else {
+                node->next = head;
+                head->prev = node;
+                head = node;
+            }
         }
 
-        if(temp == head) {
-            node->next = head;
-            head->prev = node;
-            head = node;
-        } else {
-            temp->prev->next = node;
-            node->prev = temp->prev;
-            node->next = temp;
-            temp->prev = node;
-        }
+        length++;
 
     } else {
         printError(length);
     }
 
-    length++;
+}
+
+template<class T>
+void LinkList<T>::replace(int index, T value) {
+    if(checkRange(length-1,index)) {
+        Node<T>* node = getNode(index);
+        node->data = value;
+    }
+    else {
+        printError(length);
+    }
 }
 
 template<class T>
 Node<T>* LinkList<T>::getNode(int index) {
     Node<T>* node = nullptr;
-    if(checkRange(length)) {
-        
+    if(checkRange(length-1,index)) {
+        if(index < 0) {
+            node = tail;
+            index = ~index;
+            while(index) {
+                node = node->prev;
+                index--;
+            }
+        } 
+        else {
+            node = head;
+            while(index) {
+                node = node->next;
+                index--;
+            }
+        }
     }
     return node;
 }
 
+
+template<class T>
+T LinkList<T>::getValue(int index) {
+    Node<T>* node = getNode(index);
+    if(node == nullptr) {
+        std::string msg = "Index out of range("+std::to_string(~length+1) + " ~ " + std::to_string(length-1) + ")";
+        throw msg;
+    }
+    return node->data;
+}
+
+template<class T>
+void LinkList<T>::removeByIndex(int index) {
+    if(checkRange(length-1,index)) {
+        Node<T>* node = getNode(index);
+        T temp = node->data;
+        if(length == 1) {
+            head = nullptr;
+            tail = nullptr;
+        }
+        else if(node == head) {
+            head = node->next;
+            node->next->prev = node->prev;
+        }
+        else if(node == tail) {
+            tail = node->prev;
+            node->prev->next = node->next;
+        }
+        delete node;
+        length--;
+        std::cout << "Node postion:" << std::setw(5)
+                  << index << "  value:" << std::setw(5)
+                  << temp  << " deleted!" << std::endl;
+    }
+    else {
+        printError(length-1);
+    }
+}
+
+
 int main() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
-    int x = 0;
-    std::cout << ~x << std::endl;
-    LinkList<int>* list = new LinkList<int>();
-    list->insert(-1,13);
-    list->add(17);
-    list->add(24);
-    list->add(21314);
-    list->add(282);
+    int x = -3;
+    int y = 1;
+    std::cout << "~x = " << ~x << std::endl;
+    std::cout << "~y = " << ~y << std::endl;
+    LinkList<int>* list = new LinkList<int>;
+    list->insert(0,2);
+    list->insert(-1,3);
+    list->insert(1,5);
+    list->insert(0,-100);
+    list->insert(-2,132);
     list->display();
-    list->insert(-1,213);
+    try {
+        std::cout << list->getValue(100) << std::endl;
+    } catch(std::string& msg) {
+        std::cerr << msg << '\n';
+    }
+    
+    list->removeByIndex(-1);
+    list->removeByIndex(0);
+    list->removeByIndex(-1);
+    list->removeByIndex(-1);
+    list->removeByIndex(110);
     list->display();
-    list->~LinkList();
+    delete list;
     return 0;
 }
