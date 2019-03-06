@@ -9,6 +9,10 @@ class Node {
 
         Node(T value);
         ~Node();
+
+        void operator=(T value) {
+            data = value;
+        }
 };
 
 template<class T>
@@ -35,6 +39,11 @@ class LinkList {
         LinkList();
         ~LinkList();
         void setFormat(int length);
+        void display();
+        bool isEmpty();
+        int size();
+        void printError(int range);
+        bool checkRange(int range, int offset);
         void add(T value);
         void insert(int index, T value);
         void replace(int index, T value);
@@ -43,11 +52,30 @@ class LinkList {
         void removeByIndex(int index);
         void removeByValue(T value); // default delete all value in linklist which equal parameter
         void removeByValue(T value, bool flag); // from head or from tail
-        void display();
-        bool isEmpty();
-        bool checkRange(int range, int offset);
-        void printError(int range);
+
+        T operator[](const std::size_t& index);
+        // const Node<T>*& operator[](const std::size_t& index);
 };
+
+template<class T>
+LinkList<T>::LinkList()
+    :head(nullptr) 
+    ,tail(nullptr)
+    ,length(0)
+    ,formatlength(7) // dafault length 7 (minimal)
+    { } 
+
+template<class T>
+LinkList<T>::~LinkList() {
+    Node<T>* temp = nullptr;
+    while(head != nullptr) {
+        temp = head;
+        head = head->next;
+        delete temp;
+    }
+
+    std::cout << "Linklist is delete!" << std::endl;
+}
 
 template<class T>
 void LinkList<T>::setFormat(int length) {
@@ -86,13 +114,18 @@ bool LinkList<T>::isEmpty() {
 }
 
 template<class T>
+int LinkList<T>::size() {
+    return length;
+}
+
+template<class T>
 void LinkList<T>::printError(int range) {
     std::cout << "Index out of range(" << ~range << " ~ " << range << ")" << std::endl;
 }
 
 template<class T>
 bool LinkList<T>::checkRange(int range, int offset) {
-    // orignal version
+    // orginal version
     /**
      * this version has logic error
      */
@@ -103,26 +136,6 @@ bool LinkList<T>::checkRange(int range, int offset) {
     if(offset >= ~range && offset <= range) 
         return true;
     return false;
-}
-
-template<class T>
-LinkList<T>::LinkList()
-    :head(nullptr) 
-    ,tail(nullptr)
-    ,length(0)
-    ,formatlength(7) // dafault length 7 (minimal)
-    { } 
-
-template<class T>
-LinkList<T>::~LinkList() {
-    Node<T>* temp = nullptr;
-    while(head != nullptr) {
-        temp = head;
-        head = head->next;
-        delete temp;
-    }
-
-    std::cout << "Delete LinkList" << std::endl;
 }
 
 template<class T>
@@ -228,8 +241,20 @@ void LinkList<T>::replace(int index, T value) {
     }
 }
 
+
 template<class T>
-Node<T>* LinkList<T>::getNode(int index) {
+T LinkList<T>::getValue(int index) {
+    Node<T>* node = getNode(index);
+    if(node == nullptr) {
+        std::string msg = "Index out of range("+std::to_string(~length+1) + " ~ " + std::to_string(length-1) + ")";
+        throw msg;
+    }
+    return node->data;
+}
+
+
+template<class T>
+Node<T>* LinkList<T>:: getNode(int index) {
     Node<T>* node = nullptr;
     if(checkRange(length-1,index)) {
         if(index < 0) {
@@ -249,17 +274,6 @@ Node<T>* LinkList<T>::getNode(int index) {
         }
     }
     return node;
-}
-
-
-template<class T>
-T LinkList<T>::getValue(int index) {
-    Node<T>* node = getNode(index);
-    if(node == nullptr) {
-        std::string msg = "Index out of range("+std::to_string(~length+1) + " ~ " + std::to_string(length-1) + ")";
-        throw msg;
-    }
-    return node->data;
 }
 
 template<class T>
@@ -290,6 +304,16 @@ void LinkList<T>::removeByIndex(int index) {
     }
 }
 
+template<class T>
+T LinkList<T>::operator[](const std::size_t& index) {
+    return getValue(index);
+}
+
+// template<class T>
+// const Node<T>*& LinkList<T>::operator[](const std::size_t& index) {
+//     const Node<T>*& node = getNode(index);
+//     return node;
+// }
 
 int main() {
     std::ios::sync_with_stdio(false);
@@ -298,25 +322,39 @@ int main() {
     int y = 1;
     std::cout << "~x = " << ~x << std::endl;
     std::cout << "~y = " << ~y << std::endl;
-    LinkList<int>* list = new LinkList<int>;
-    list->insert(0,2);
-    list->insert(-1,3);
-    list->insert(1,5);
-    list->insert(0,-100);
-    list->insert(-2,132);
-    list->display();
-    try {
-        std::cout << list->getValue(100) << std::endl;
-    } catch(std::string& msg) {
-        std::cerr << msg << '\n';
-    }
+    // LinkList<int>* list = new LinkList<int>;
+    LinkList<int> list;
+    list.insert(0,2);
+    list.insert(-1,3);
+    list.insert(1,5);
+    list.insert(0,-100);
+    list.insert(-2,132);
+    // list->display();
+    // try {
+    //     std::cout << list->getValue(100) << std::endl;
+    // } catch(std::string& msg) {
+    //     std::cerr << msg << '\n';
+    // }
     
-    list->removeByIndex(-1);
-    list->removeByIndex(0);
-    list->removeByIndex(-1);
-    list->removeByIndex(-1);
-    list->removeByIndex(110);
-    list->display();
-    delete list;
+    // list->removeByIndex(-1);
+    // list->removeByIndex(0);
+    // list->removeByIndex(-1);
+    // list->removeByIndex(-1);
+    // list->removeByIndex(110);
+    // list->display();
+    // delete list;
+    list.insert(-1,3);
+    list.insert(-1,4);
+    list.display();
+    // list->removeByIndex(-1);
+    // list->removeByIndex(0);
+    // list->display();
+    // list->add('c');
+    // list->insert(10,'a');
+    // list->insert(-1,'a');
+    // list->display();
+    for(int i = 0; i < list.size(); ++i) {
+        std::cout << list[i] << std::endl;
+    }
     return 0;
 }
