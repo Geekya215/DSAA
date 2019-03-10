@@ -1,12 +1,4 @@
-/*
- * @Author: geekya215 
- * @Date: 2019-03-09 18:17:43 
- * @Last Modified by:   geekya215 
- * @Last Modified time: 2019-03-09 18:17:43 
- */
-#include <bits/stdc++.h>
-
-using namespace std;
+#include "decla.h"
 
 void insert_sort(int nums[],int len) {
 
@@ -21,12 +13,4 @@ void insert_sort(int nums[],int len) {
         
         nums[pos] = temp;
     }
-}
-
-int main() {
-    int nums[6] = {2,9,1,7,4,3};
-    insert_sort(nums,6);
-    for(int i = 0; i < 6; ++i)
-        cout << nums[i] << ' ';
-    return 0;
 }

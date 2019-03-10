@@ -1,12 +1,5 @@
-/*
- * @Author: geekya215 
- * @Date: 2019-03-08 23:52:32 
- * @Last Modified by: geekya215
- * @Last Modified time: 2019-03-08 23:53:23
- */
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <algorithm>
+#include "decla.h"
 
 void select_sort(int nums[], int len) {
     int min_index;
@@ -17,14 +10,6 @@ void select_sort(int nums[], int len) {
                 min_index = j;
             }
         }
-        swap(nums[min_index],nums[i]);
+        std::swap(nums[min_index],nums[i]);
     }
-}
-
-int main() {
-    int nums[6] = {9,23,55,8,49,2};
-    select_sort(nums,6);
-    for(int i = 0; i < 6; ++i)
-        cout << nums[i] << ' ';
-    return 0;
 }
