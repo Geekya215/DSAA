@@ -5,14 +5,14 @@
 
 ### What is the repo?
 > This repo not only has normal algorithm like dp, greedy, etc. it's also has kinds of 
-> trick methods from OJ or other website.
+> trick methods from OJ problem or other website.
 
 <br>
 
 
 
 ### Daliy Update
-> A path of learning algorithm and datastruture.daliy update is my goal, so I will update one new datastructure or algorithm at least.
+> A path of learning algorithm and datastruture. update one new datastructure or algorithm at least everyday.
 
 <br>
 
