@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/geekylz215/Documents/DSAA/Sort/decla.h
+
+/home/geekylz215/Documents/DSAA/Sort/main.cpp
+iostream
+-
+decla.h
+/home/geekylz215/Documents/DSAA/Sort/decla.h
+util.h
+/home/geekylz215/Documents/DSAA/Sort/util.h
+
+/home/geekylz215/Documents/DSAA/Sort/merge_sort.cpp
+algorithm
+-
+decla.h
+/home/geekylz215/Documents/DSAA/Sort/decla.h
+
+/home/geekylz215/Documents/DSAA/Sort/util.h
+iostream
+-
+random
+-
+

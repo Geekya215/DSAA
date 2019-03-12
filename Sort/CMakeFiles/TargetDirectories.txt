@@ -1,0 +1,3 @@
+/home/geekylz215/Documents/DSAA/Sort/CMakeFiles/rebuild_cache.dir
+/home/geekylz215/Documents/DSAA/Sort/CMakeFiles/out.dir
+/home/geekylz215/Documents/DSAA/Sort/CMakeFiles/edit_cache.dir
