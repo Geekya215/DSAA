@@ -4,7 +4,7 @@
 <br>
 
 ### What is the repo?
-> This repo not only has normal algorithm like dp, greedy, etc. it's also has kinds of 
+> This repo not only has normal algorithm. it's also has kinds of 
 > trick methods from OJ problem or other website.
 
 <br>
@@ -28,3 +28,4 @@
 - Sort
 - Fast_Pow
 - Fast_Pow_Matrix
+- Zeller_formula
