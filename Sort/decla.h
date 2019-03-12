@@ -13,4 +13,8 @@ void quick_sort(int nums[], int low, int higt);
 
 int partition(int nums[], int low, int high);
 
+void merge_sort(int nums[], int left, int right);
+
+void merge(int nums[], int left, int mid, int right);
+
 #endif
