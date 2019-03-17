@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 const int size = 1e2+5;
 int a[size];
@@ -28,8 +27,8 @@ void dfs(int n) {
 }
 
 int main() {
-    cin >> len;
+    std::cin >> len;
     dfs(1);
-    cout << ans << endl;
+    std::cout << ans << std::endl;
     return 0;
 }

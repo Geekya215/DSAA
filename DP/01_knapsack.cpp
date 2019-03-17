@@ -26,9 +26,8 @@ int main() {
 
     // space optimize
     for(int i = 1; i <= n; ++i) {
-        for(int j = m; j >= 0; --j) {
-            if(j >= c[i])
-                dp[j] = std::max(dp[j],dp[j-c[i]]+v[i]);
+        for(int j = m; j >= c[i]; --j) {
+            dp[j] = std::max(dp[j],dp[j-c[i]]+v[i]);
         }
     }
 
