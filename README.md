@@ -24,7 +24,7 @@
 ### DataStruture
 - LinkList
 - Fenwick_Tree
-- Segmen_Tree
+- Segment_Tree
 - BigInteger
 
 ### Algorithm
