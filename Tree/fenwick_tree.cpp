@@ -7,7 +7,6 @@ int fenwick_tree[m_size]; // fenwick tree array
 int num[m_size]; // default array to get sum
 int len; // length of the array
 
-
 // for time optimize do not use function
 int lowbit(int x) {
     return x&(-x);
@@ -24,23 +23,20 @@ void build() {
     }
 }
 
-int sum(int index) {
+int sum(int i) {
     int sum = 0;
-    for(int i = index; i > 0; i -= lowbit(i)) 
-        sum += fenwick_tree[i];
+    for(; i > 0; i -= lowbit(i))
     return sum;
 }
-
 
 int getSum(int left, int right) {
     return sum(right) - sum(left-1);
 }
 
-void update(int index, int value) {
-    for(int i = index+1; i <= len; i += lowbit(i))
-        fenwick_tree[i] += value;
+void update(int i, int v) {
+    for( ; i <= len; i += lowbit(i))
+        fenwick_tree[i] += v;
 }
-
 
 int main() {
     ios::sync_with_stdio(false);
