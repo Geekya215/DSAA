@@ -26,6 +26,7 @@ void build() {
 int sum(int i) {
     int sum = 0;
     for(; i > 0; i -= lowbit(i))
+        sum += fenwick_tree[i];
     return sum;
 }
 
