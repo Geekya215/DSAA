@@ -25,6 +25,7 @@
 - LinkList
 - Fenwick_Tree
 - Segment_Tree
+- ZKW_Segment_Tree
 - BigInteger
 
 ### Algorithm
