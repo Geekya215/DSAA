@@ -34,6 +34,7 @@
 - DFS
 - BFS
 - Dijkstra
+- Warshall Floyd
 - Fast_Pow
 - Fast_Pow_Matrix
 - Zeller_formula
