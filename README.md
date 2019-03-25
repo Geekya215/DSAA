@@ -32,6 +32,8 @@
 - Sort
 - Dynamic Program
 - DFS
+- BFS
+- Dijkstra
 - Fast_Pow
 - Fast_Pow_Matrix
 - Zeller_formula
