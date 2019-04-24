@@ -33,7 +33,9 @@
 - Dynamic Program
 - DFS
 - BFS
+- Binary_Search
 - Dijkstra
+- Bellman-ford
 - Warshall Floyd
 - Fast_Pow
 - Fast_Pow_Matrix
