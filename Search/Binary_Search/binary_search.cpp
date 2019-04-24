@@ -11,8 +11,8 @@ int binary_search(vector<int>& nums, int target) {
         // mid = (first + last) / 2; normal version, overflow bug
         // mid = first + (last - first) / 2; // bug fix version
         mid = (first & last) + ((first^last) >> 1); // best efficient and no overflow bug
-	    if(nums[mid] < target) first = mid + 1;
-	    else last = mid;	
+	if(nums[mid] < target) first = mid + 1;
+	else last = mid;	
     }
     return last;
 }
