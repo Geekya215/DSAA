@@ -26,6 +26,8 @@
 - Fenwick_Tree
 - Segment_Tree
 - ZKW_Segment_Tree
+- AVL_Tree
+- RB_ Tree
 - BigInteger
 
 ### Algorithm
