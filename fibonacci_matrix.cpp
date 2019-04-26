@@ -52,4 +52,5 @@ int main() {
     while(cin>>n,~n) {
         cout << fib_matrix(n) << endl;
     }
+    return 0;
 }
