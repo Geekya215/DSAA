@@ -27,7 +27,10 @@
 - Segment_Tree
 - ZKW_Segment_Tree
 - AVL_Tree
-- RB_ Tree
+- RB_Tree
+- B+_Tree
+- Trie
+- Union-Find
 - BigInteger
 
 ### Algorithm
