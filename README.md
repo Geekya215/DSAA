@@ -47,3 +47,5 @@
 - Zeller_formula
 - GCD
 - LCM
+- Sieve of Euler
+- Sieve of eratosthenes
