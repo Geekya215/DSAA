@@ -30,6 +30,7 @@
 - RB_Tree
 - B+_Tree
 - Trie
+- Huffman_Tree
 - Union-Find
 - BigInteger
 
