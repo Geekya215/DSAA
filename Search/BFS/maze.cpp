@@ -40,7 +40,7 @@ void bfs(int x, int y) {
 
     while(!q.empty()) {
         p = q.front();
-	q.pop();
+	    q.pop();
 	for(int i = 0; i < 4; ++i) {
 	    int tx = p.fi + dir[i].fi.fi;
 	    int ty = p.se + dir[i].fi.se;
