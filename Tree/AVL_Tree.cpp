@@ -30,7 +30,11 @@ Node* findNode(Node* root, int value) {
 
 
 void insertNode(Node* root, int value) {
-    
+    if(root == nullptr) root = new Node(value)
+
+    else {
+        
+    }
 }
 
 
