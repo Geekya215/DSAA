@@ -41,7 +41,7 @@
 - BFS
 - Binary_Search
 - Dijkstra
-- Bellman-ford
+- Bellman-Ford
 - Warshall Floyd
 - Fast_Pow
 - Fast_Pow_Matrix
