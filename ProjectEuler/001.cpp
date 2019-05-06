@@ -17,8 +17,34 @@ using namespace std;
 
 int main() {
     int ans = 0;
-    for(int i = 3; i <= 1000; i += 3) ans += i;
-    for(int i = 5; i <= 1000; i += 5) ans += i;
+    for(int i = 3; i < 1000; ++i) {
+        if(i%3==0 || i%5==0)
+            ans += i;
+    }
     cout << ans << endl;
     return 0;
 }
+
+
+// Optimize Methods
+
+/*
+
+#include<bits/stdc++.h>
+using namespace std;
+
+long long tot = 1000 - 1;
+
+long long factorSum(int n) {
+    long long p = tot / n;
+    return n * (p * (p+1)) / 2;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout << factorSum(3) + factorSum(5) - factorSum(15) << endl;
+    return 0;
+}
+
+*/
