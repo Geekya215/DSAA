@@ -45,9 +45,12 @@
 - Warshall Floyd
 - Fast_Pow
 - Fast_Pow_Matrix
-- Zeller_formula
 - Euler Function
 - GCD
 - LCM
 - Sieve of Euler
 - Sieve of eratosthenes
+
+### Other
+- Zeller_formula
+- Quick Read
