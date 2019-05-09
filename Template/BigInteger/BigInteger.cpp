@@ -75,11 +75,12 @@ std::ostream& operator << (std::ostream& out, const BigInteger& number) {
         out << number.num[len];
         len--;
     }
+    return out;
 }
 
 
 int main() {
-    BigInteger a = 1213131;
-    BigInteger b = 123;
-    std::cout << a+b << std::endl;
+    BigInteger a = 12;
+    BigInteger b = 0;
+    std::cout << a + b << std::endl;
 }
