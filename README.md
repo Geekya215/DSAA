@@ -10,19 +10,13 @@
 <br>
 
 
-
-### Daliy Update
-> A path of learning algorithm and datastruture. update one new datastructure or algorithm at least everyday.
-
-<br>
-
-
-
-
 ## Mark List
 
 ### DataStruture
 - LinkList
+- Stack
+- Queue
+- DanceLink
 - Fenwick_Tree
 - Segment_Tree
 - ZKW_Segment_Tree
@@ -32,7 +26,6 @@
 - Trie
 - Huffman_Tree
 - Union-Find
-- BigInteger
 
 ### Algorithm
 - Sort
@@ -50,7 +43,9 @@
 - LCM
 - Sieve of Euler
 - Sieve of eratosthenes
+- KMP
 
 ### Other
+- BigInteger
 - Zeller_formula
 - Quick Read
