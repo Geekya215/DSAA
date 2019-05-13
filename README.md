@@ -1,30 +1,42 @@
 # DSAA(DataStructure And Algorithm)
-:wrench: DSAA repo has various datastructure and algorithm implements using c++
+:wrench: DSAA repo has various datastructure and algorithm implements using c++.
+This repo not only has normal algorithm which in book. it's also has kinds of trick methods from OJ problem or math problem.
 
 <br>
 
-### What is the repo?
-> This repo not only has normal algorithm. it's also has kinds of 
-> trick methods from OJ problem or other website.
+## Category
 
-<br>
+### DataStructureIN
 
+|Name|Type|
+|----|----|
+|[LinkList](https://github.com/Geekya215/DSAA/blob/master/DataStructure/LinkList/LinkList.cpp)|Liner|
+|[Stack]()|Liner|
+|[Queue]()|Liner|
+|[Fenwick_Tree](https://github.com/Geekya215/DSAA/blob/master/DataStructure/Tree/fenwick_tree.cpp)|Tree|
+|[Segment_Tree]()|Tree|
+|[ZKW_Segment_Tree](https://github.com/Geekya215/DSAA/blob/master/DataStructure/Tree/zkw_tree.cpp)|Tree|
+|[AVL_Tree](https://github.com/Geekya215/DSAA/blob/master/DataStructure/Tree/AVL_Tree.cpp)|Tree|
+|[RB_Tree](https://github.com/Geekya215/DSAA/blob/master/DataStructure/Tree/RB_Tree.cpp)|Tree||
+|[B+ Tree]()|Tree|
+|[Trie]()|Tree|
+|[Huffman_Tree]()|Tree|
 
-## Mark List
+### Algorithm
+#### Sort
+|Name|Stable|Best Time Complexity|Worst Time Complexity|Sapce Complexity|
+|----|------|--------------------|---------------------|----------------|
+|[Bubble Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/bubble_sort.cpp)|✔️ ||||
+|[Insert Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/insert_sort.cpp)|✔️ ||||
+|[Select Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/select_sort.cpp)|   ||||
+|[Shell Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/shell_sort.cpp) |   ||||
+|[Quick Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/quick_sort.cpp) |   ||||
+|[Heap Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/heap_sort.cpp)   |   ||||
+|[Merge Sort](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/merge_sort.cpp) |   ||||
+
+### Others
 
 ### DataStruture
-- LinkList
-- Stack
-- Queue
-- DanceLink
-- Fenwick_Tree
-- Segment_Tree
-- ZKW_Segment_Tree
-- AVL_Tree
-- RB_Tree
-- B+_Tree
-- Trie
-- Huffman_Tree
 - Union-Find
 
 ### Algorithm
