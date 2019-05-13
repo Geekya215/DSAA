@@ -24,10 +24,37 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const long long goal = 5e6;
+
+long long getSum(long long n) {
+    return (1+n)*n/2;
+}
+
+long long getFactorCount(long long n) {
+    long long count = 0;
+    long long num = getSum(n);
+    long long mid = sqrt(num);
+    for(long long i = 1; i <= mid; ++i) {
+        if(num%i == 0) {
+            count++;
+            if(i != num/i)
+                count++;
+        }
+    }
+    return count;
+}
+
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    
+    long long ans;
+    for(int i = 1e3; ; ++i) {
+        ans = getFactorCount(i);
+        if(ans > goal) {
+            cout << getSum(i) << endl;
+            return 0;
+        }
+    }
     return 0;
 }
