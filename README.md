@@ -9,7 +9,7 @@ This repo not only has normal algorithm which in book. it's also has kinds of tr
 ### DataStructure
 
 |Name|Type|Difficult|
-|----|----|---------|
+|:--:|:--:|:-------:|
 |[LinkList](https://github.com/Geekya215/DSAA/blob/master/DataStructure/LinkList/LinkList.cpp)|Liner|:star:|
 |[Stack]()|Liner|:star:|
 |[Queue]()|Liner|:star:|
@@ -25,7 +25,7 @@ This repo not only has normal algorithm which in book. it's also has kinds of tr
 ### Algorithm
 #### Sort
 |Name|Stable|Best Time Complexity|Worst Time Complexity|Average Time Complexity|Sapce Complexity|
-|----|:----:|:------------------:|:-------------------:|:---------------------:|:--------------:|
+|:--:|:----:|:------------------:|:-------------------:|:---------------------:|:--------------:|
 |[Bubble](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/bubble_sort.cpp)|✔️ |![](./res/n.png)|![](./res/n.png)|![](./res/n^2.png)|![](./res/1.png)|
 |[Insert](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/insert_sort.cpp)|✔️ |![](./res/n.png)|![](./res/n.png)|![](./res/n^2.png)|![](./res/1.png)|
 |[Select](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/select_sort.cpp)|❌ |![](./res/n^2.png)|![](./res/n^2.png)|![](./res/n^2.png)|![](./res/1.png)|
@@ -36,26 +36,26 @@ This repo not only has normal algorithm which in book. it's also has kinds of tr
 
 #### Math
 |Name|Time Complexity|Difficult|
-|----|:-------------:|:-------:|
-|[GCD]()|||
-|[LCM]()|||
-|[Sieve of Eratosthenes]()|||
-|[Sieve of Euler]()|||
-|[Euler Function]()|||
+|:--:|:-------------:|:-------:|
+|[GCD](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Math/number%20theory/GCD.cpp)||:star:|
+|[LCM](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Math/number%20theory/LCM.cpp)||:star:|
+|[Sieve of Eratosthenes](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Math/number%20theory/Sieve_of_Eratosthenes.cpp)|![](./res/nloglogn.png)|:star:|
+|[Sieve of Euler](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Math/number%20theory/Sieve_of_Euler.cpp)|![](./res/n.png)|:star::star:|
+|[Euler Function]()||:star:|
 
 #### Graph
 |Name|TIme Complexity|Difficult|
-|----|:-------------:|:-------:|
-|[Dijkstra](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/dijkstra.cpp)|||
-|[Bellman Ford](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/bellman_ford.cpp)|||
-|[Warshall Floyd](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/floyd_warshall.cpp)|||
+|:--:|:-------------:|:-------:|
+|[Dijkstra](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/dijkstra.cpp)||:star::star:|
+|[Bellman Ford](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/bellman_ford.cpp)||:star::star:|
+|[Warshall Floyd](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/floyd_warshall.cpp)||:star::star:|
 
 #### Search
 |Name|Time Complexity|Difficult|
-|----|:-------------:|:-------:|
-|[DFS](https://github.com/Geekya215/DSAA/tree/master/Algorithm/Search/DFS)|||
-|[BFS](https://github.com/Geekya215/DSAA/tree/master/Algorithm/Search/BFS)|||
-|[Binary Search](https://github.com/Geekya215/DSAA/tree/master/Algorithm/Search/Binary_Search)|||
+|:--:|:-------------:|:-------:|
+|[DFS](https://github.com/Geekya215/DSAA/tree/master/Algorithm/Search/DFS)||:star:|
+|[BFS](https://github.com/Geekya215/DSAA/tree/master/Algorithm/Search/BFS)||:star:|
+|[Binary Search](https://github.com/Geekya215/DSAA/tree/master/Algorithm/Search/Binary_Search)||:star:|
 
 #### Other
 - [Zeller Formula](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Other/zeller_formula.cpp)
