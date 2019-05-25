@@ -49,6 +49,8 @@ This repo not only has normal algorithm which in book. it's also has kinds of tr
 |[Dijkstra](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/dijkstra.cpp)||:star::star:|
 |[Bellman Ford](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/bellman_ford.cpp)||:star::star:|
 |[Warshall Floyd](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Graph/floyd_warshall.cpp)||:star::star:|
+|[Prim]()||:star::star:|
+|[Kruskal]()||:star::star:|
 
 #### Search
 |Name|Time Complexity|Difficult|
