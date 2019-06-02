@@ -1,6 +1,6 @@
 # DSAA(DataStructure And Algorithm)
 :wrench: DSAA repo has various datastructure and algorithm implements using c++.
-This repo not only has normal algorithm which in book. it's also has kinds of trick methods from OJ problem or math problem.
+This repo not only mark normal algorithm in book. it's also has kinds of trick methods from OJ problem or math problem.
 
 <br>
 
