@@ -26,8 +26,8 @@ This repo not only has normal algorithm which in book. it's also has kinds of tr
 #### Sort
 |Name|Stable|Best Time Complexity|Worst Time Complexity|Average Time Complexity|Sapce Complexity|
 |:--:|:----:|:------------------:|:-------------------:|:---------------------:|:--------------:|
-|[Bubble](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/bubble_sort.cpp)|✔️ |![](./res/n.png)|![](./res/n.png)|![](./res/n^2.png)|![](./res/1.png)|
-|[Insert](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/insert_sort.cpp)|✔️ |![](./res/n.png)|![](./res/n.png)|![](./res/n^2.png)|![](./res/1.png)|
+|[Bubble](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/bubble_sort.cpp)|✔️ |![](./res/n.png)|![](./res/n^2.png)|![](./res/n^2.png)|![](./res/1.png)|
+|[Insert](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/insert_sort.cpp)|✔️ |![](./res/n.png)|![](./res/n^2.png)|![](./res/n^2.png)|![](./res/1.png)|
 |[Select](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/select_sort.cpp)|❌ |![](./res/n^2.png)|![](./res/n^2.png)|![](./res/n^2.png)|![](./res/1.png)|
 |[Shell](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/shell_sort.cpp) |❌ |![](./res/nlogn.png)|![](./res/n^2.png)|![](./res/n^{4}{3}.png)|![](./res/1.png)|
 |[Quick](https://github.com/Geekya215/DSAA/blob/master/Algorithm/Sort/quick_sort.cpp) |⭕️ |![](./res/nlogn.png)|![](./res/n^2.png)|![](./res/nlogn.png)|![](./res/1.png)|
