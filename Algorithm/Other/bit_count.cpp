@@ -10,6 +10,15 @@ int normal(int number) {
   return ans;
 }
 
+int ex_normal(int number) {
+  int ans = 0;
+  while(number) {
+    ans++;
+    number = number & (number - 1);
+  }
+  return ans;
+}
+
 int advance(int x) {
   x = x - ((x >> 1) & 0x55555555);
   x = (x & 0x33333333) + ((x >> 2) & 0x33333333);
@@ -25,6 +34,7 @@ int main() {
   int n;
   cin >> n;
   cout << normal(n) << endl;
+  cout << ex_normal(n) << endl;
   cout << advance(n) << endl;
   return 0;
 }
